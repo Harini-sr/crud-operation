@@ -1,0 +1,40 @@
+ <div class="container">
+    <div class="form">
+        <form [formGroup]="userForm"  autocomplete="off">
+            <div class="form-group">
+                <label for="fname">First Name :</label>
+                <input type="text" class="form-control" formControlName="fname" id="fname">
+                <div *ngIf="fname?.invalid && fname?.touched" class="error">First Name is required</div>
+            </div> 
+              
+            <div class="form-group">
+                <label for="lname">Last Name :</label>
+                <input type="text" class="form-control" formControlName="lname">
+                <div *ngIf="lname?.invalid && lname?.touched" class="error">last Name is required</div>
+
+            </div> 
+            <div class="form-group">
+                <label for="email">email :</label>
+                <input type="email" class="form-control" formControlName="email">
+                <div *ngIf="email?.invalid && email?.touched" class="error">Email is required</div>
+
+            </div> 
+            <div class="form-group">
+                <label for="number">Number :</label>
+                <input type="text" class="form-control" formControlName="number">
+                <div *ngIf="number?.invalid && number?.touched" class="error">number is required</div>
+
+            </div> 
+            <div class="form-group">
+                <label for="age">Age :</label>
+                <input type="text" class="form-control" formControlName="age">
+                <div *ngIf="age?.invalid && age?.touched" class="error">age is required</div>
+
+            </div> 
+            <div class="m-4">
+                <button class="btn btn-warning me-3" (click)="reset()">Cancel</button>
+                <button class="btn btn-primary" [disabled]="userForm.invalid"  (click)="onsubmit()">Submit</button>
+            </div>
+        </form>
+    </div>
+</div> 
